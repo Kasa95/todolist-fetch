@@ -34,3 +34,30 @@ ul.no-bullets {
     padding: 0; /* Remove padding */
     margin: 0; /* Remove margins */
   }
+
+body {
+    background-color: rgb(224, 224, 224);
+}
+
+h1 {
+    color: rgb(57, 57, 57);
+}
+
+input {
+    background-color: transparent;
+}
+input:focus-visible {
+    outline: none;
+}
+
+.container {
+    margin-bottom: 5px;
+}
+
+hr {
+    opacity: 0.10;
+}
+
+.w-30 {
+    width: 30%!important;
+}

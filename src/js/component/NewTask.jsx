@@ -26,8 +26,8 @@ const NewTask = () => {
 
 	const listaTodo = list.map((item, index) => (
 		<li key={index} className={"row " + tachado}>
-			<div className="col-10">{item} </div>
-			<div className="col-2">
+			<div className="col-11">{item} </div>
+			<div className="col-1">
 				{isShown && (
 					<>
 						<svg
@@ -35,7 +35,7 @@ const NewTask = () => {
 							width="16"
 							height="16"
 							fill="currentColor"
-							className="bi bi-trash doneTask col-1"
+							className="bi bi-trash doneTask"
 							viewBox="0 0 16 16"
 							onClick={() => handleRemove(index)}>
 							<path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
@@ -51,8 +51,8 @@ const NewTask = () => {
 	));
 	console.log(list);
 	return (
-		<div className="container w-50 py-3 border mt-5">
-			<h1 className="text-center py-3">ToDo List</h1>
+		<div className="container w-30 py-3 border mt-5">
+			<h1 className="text-center py-3 display-4">ToDo List</h1>
 			<form action="#" onSubmit={addTask} className="container">
 				<input
 					type="text"
@@ -69,9 +69,14 @@ const NewTask = () => {
 					{listaTodo}
 				</ul>
 			) : (
-				<p>No tasks</p>
+				<ul className="row no-bullets">
+					<li>No tasks</li>
+				</ul>
 			)}
-			<p>{list.length} items left</p>
+			<hr></hr>
+			<ul className="row no-bullets">
+				<li>{list.length} items left</li>
+			</ul>
 		</div>
 	);
 };
