@@ -13,6 +13,7 @@
 
 .doneTask {
     cursor: pointer;
+    float: right;
 }
 
 .doneTask:hover {
@@ -61,3 +62,4 @@ hr {
 .w-30 {
     width: 30%!important;
 }
+

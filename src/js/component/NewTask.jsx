@@ -25,9 +25,9 @@ const NewTask = () => {
 	}
 
 	const listaTodo = list.map((item, index) => (
-		<li key={index} className={"row " + tachado}>
-			<div className="col-11">{item} </div>
-			<div className="col-1">
+		<div key={index} className={"row " + tachado}>
+			<div className="col-10">{item} </div>
+			<div className="col-2">
 				{isShown && (
 					<>
 						<svg
@@ -47,7 +47,7 @@ const NewTask = () => {
 					</>
 				)}
 			</div>
-		</li>
+		</div>
 	));
 	console.log(list);
 	return (
@@ -62,21 +62,26 @@ const NewTask = () => {
 				<input type="submit" value="Submit"></input>
 			</form>
 			{list.length > 0 ? (
-				<ul
-					className="row no-bullets"
+				<div
+					className="row"
 					onMouseEnter={() => setIsShown(true)}
 					onMouseLeave={() => setIsShown(false)}>
 					{listaTodo}
-				</ul>
+				</div>
 			) : (
-				<ul className="row no-bullets">
-					<li>No tasks</li>
-				</ul>
+				<div>
+					<p>You have no tasks, time to relax!</p>
+				</div>
 			)}
 			<hr></hr>
-			<ul className="row no-bullets">
-				<li>{list.length} items left</li>
-			</ul>
+
+			{list.length > 0 ? (
+				<div className="font-weight-light">
+					{list.length} tasks left
+				</div>
+			) : (
+				<div>No tasks left</div>
+			)}
 		</div>
 	);
 };
